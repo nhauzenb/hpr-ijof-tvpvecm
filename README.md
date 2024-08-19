@@ -6,10 +6,28 @@
 
 ### Electricity price data for the empirical application.
 In the empirical application, we focus on modeling European electricity prices. Moreover, in a forecast exercise we consider hourly prices for Germany. 
-For the first application, we use daily prices to estimate our model jointly for nine different regional markets: Baltics (BALT), Denmark (DK), Finland (FI), France (FR), Germany (DE), Italy (IT), Norway (NO), Sweden (SE) and Switzerland (CH). Prices for BALT and the Nordic countries (DK, FI, NO, and SE) are obtained from *Nord Pool*; the German, Swiss, and French hourly auction prices are from the power spot market of the *European Energy Exchange (EEX)*; for the Italian prices, we use the single national prices (PUN) from the Italian system operator *Gestore dei Mercati Energetici (GEM)*. As additional exogenous factors, we consider daily prices for coal and fuel. In particular, we use the closing settlement prices for coal (LMCYSPT) and one month forward ICE UK natural gas prices (NATBGAS) due to their importance for the dynamic evolution of electricity prices and potential cointegration relationships. In our second application, the forecast comparison, we choose hourly day-ahead prices for Germany as our main country of interest, and focus on daylight hours and an average of the night hours. For forecasting electricity prices, we also include renewable energy sources (labeled RES) in the form of forecasted average daily demand, forecasted average daily wind generation, and forecasted average daily photovoltaic solar generation as exogenous factors. We provide the data as a .rda file [`DE ELP hourly`](./data/DE_elp_hourly.rda).
+For the first application, we use daily prices to estimate our model jointly for nine different regional markets: Baltics (BALT), Denmark (DK), Finland (FI), France (FR), Germany (DE), Italy (IT), Norway (NO), Sweden (SE) and Switzerland (CH). Prices for BALT and the Nordic countries (DK, FI, NO, and SE) are obtained from *Nord Pool*; the German, Swiss, and French hourly auction prices are from the power spot market of the *European Energy Exchange (EEX)*; for the Italian prices, we use the single national prices (PUN) from the Italian system operator *Gestore dei Mercati Energetici (GEM)*. As additional exogenous factors, we consider daily prices for coal and fuel. In particular, we use the closing settlement prices for coal (LMCYSPT) and one month forward ICE UK natural gas prices (NATBGAS) due to their importance for the dynamic evolution of electricity prices and potential cointegration relationships. In our second application, the forecast comparison, we choose hourly day-ahead prices for Germany as our main country of interest, and focus on daylight hours and an average of the night hours. For forecasting electricity prices, we also include renewable energy sources (labeled RES) in the form of forecasted average daily demand, forecasted average daily wind generation, and forecasted average daily photovoltaic solar generation as exogenous factors. We provide the data as a .rda file [`DE ELP hourly`](./electricity price data/DE_elp_hourly.rda).
+
+### Software information: 
+Estimation for all the models was carried out on a computation cluster using parallel computing. This cluster has 400 IntelE5-2650v3 2.3 GHz cores with a Sun Grid Engine. 
+We used R as our main software (R version 4.1.3). Libraries and packages used for estimation and inference include Rcpp, forecast, GIGrvg, MASS, Matrix, mvtnorm, Rcpp, stochvol, glasso, scoringRules
+Additional packages to reproduce figures and tables: data.table, dplyr, ggplot2, Hmisc, reshape2, tidyr, zoo, scales
 
 ### Estimation files to produce a single forecast:
-We use a hold-out period of approximately a year and a half (550 hold-out observations). We consider one-step-ahead predictions, which implies that we forecast each individual hour for the following day. We provide replication codes for the a single forecast for the second application. 
+
+### Replication codes:
+The replication codes reproduces all figures and tables in the manuscript. 
+
+We use a hold-out period of approximately a year and a half (550 hold-out observations). We consider one-step-ahead predictions, which implies that we forecast each individual hour for the following day. We provide replication codes for the a single forecast for the second application.    
+
+
+
+Libraries and packages used for estimation and inference: coda, forecast, GIGrvg, MASS, Matrix, mvtnorm, Rcpp, shrinkTVP, stochvol, zoo 
+Additional packages to reproduce figures and tables: data.table, dplyr, ggplot2, Hmisc, reshape2, tidyr, zoo, RColorBrewer, scales
+
+Details are provided in: https://statmath.wu.ac.at/cluster/cluster_manual_2.0.pdf
+
+
 
 
 

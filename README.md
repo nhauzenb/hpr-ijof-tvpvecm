@@ -16,6 +16,7 @@ All model estimations were carried out on a computing cluster using parallel pro
 
 
 ### Estimation files to produce a single forecast:
+For estimation, we standardized the data and then rescaled the forecasts to the original scale.
 
 ### Replication codes:
 The replication codes reproduces all figures and tables in the manuscript. 

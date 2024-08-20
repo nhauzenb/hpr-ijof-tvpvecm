@@ -23,7 +23,7 @@ The replication codes reproduces all figures and tables in the manuscript.
 We use a hold-out period of approximately a year and a half (540 hold-out observations). We consider one-step-ahead predictions, which implies that we forecast each individual hour for the following day. We provide replication codes for the a single forecast for the second application.    
 
 
-## Replication of Results in Sub-Section 4.2: *Nonlinearities and Cointegration in European Electricity Prices*
+#### Replication of Results in Sub-Section 4.2: *Nonlinearities and Cointegration in European Electricity Prices*
 
 In Sub-Section 4.2, we show and discuss:
 

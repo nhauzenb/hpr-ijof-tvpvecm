@@ -14,30 +14,26 @@ Prices for BALT and the Nordic countries (DK, FI, NO, and SE) are obtained from 
 ### Software information: 
 All model estimations were carried out on a computing cluster using parallel processing. The cluster is equipped with 400 Intel E5-2650v3 2.3 GHz cores, managed through a Sun Grid Engine. We used R (version 4.1.3) as our main software. The libraries and packages used for estimation and analysis included `Rcpp`, `forecast`, `GIGrvg`, `MASS`, `Matrix`, `mvtnorm`, `stochvol`, `glasso`, `scoringRules`, and `MCS`. Additional packages used to create figures and tables were `data.table`, `dplyr`, `ggplot2`, `Hmisc`, `reshape2`, `tidyr`, `zoo`, and `scales`.
 
-
 ### Estimation files to produce a single forecast:
-For estimation, we standardized the data and then rescaled the forecasts to the original scale.
+For estimation, we standardized the data and then rescaled the forecasts to the original scale. **!NOT DONE YET!**
 
 ### Replication codes:
 The replication codes reproduces all figures and tables in the manuscript. 
 
-We use a hold-out period of approximately a year and a half (550 hold-out observations). We consider one-step-ahead predictions, which implies that we forecast each individual hour for the following day. We provide replication codes for the a single forecast for the second application.    
+We use a hold-out period of approximately a year and a half (540 hold-out observations). We consider one-step-ahead predictions, which implies that we forecast each individual hour for the following day. We provide replication codes for the a single forecast for the second application.    
 
 
+## Replication of Results in Sub-Section 4.2: *Nonlinearities and Cointegration in European Electricity Prices*
 
-Libraries and packages used for estimation and inference: coda, forecast, GIGrvg, MASS, Matrix, mvtnorm, Rcpp, shrinkTVP, stochvol, zoo 
-Additional packages to reproduce figures and tables: data.table, dplyr, ggplot2, Hmisc, reshape2, tidyr, zoo, RColorBrewer, scales
+In Sub-Section 4.2, we show and discuss:
 
-Details are provided in: https://statmath.wu.ac.at/cluster/cluster_manual_2.0.pdf
+* **Figure 1.** The posterior probability of the rank (PPR) over time for the most flexible specification.
+* **Figure 2.** The posterior inclusion probability (PIP) over time for autoregressive coefficients (panel (a)) and covariance matrices (panel (b)) of the most flexible specification.
+* **Figure 3.** The posterior median of all SV processes, with the red line denoting the first principal component (PCA) of all nine SV processes.
+* **Table B.1.** Posterior estimates for the state equations of the error variances.
 
+The file [`Subsection4-2_insample`](Subsection4-2_insample.R) can be used to replicate Figure 1, panels (a) and (b) of Figure 2, panels (a) and (b) of Figure 3, as well as Table B.1 in the Appendix. To do so, the file loads the output data from the folder [`INSAMPLE-data`](./INSAMPLE-data) and stores the figures and tables in a folder labeled `INSAMPLE-res`.
 
-
-
-
-we use the macroeconomic uncertainty measure of [Jurado, Ludvigson, and Ng (2015, AER)](https://www.aeaweb.org/articles?id=10.1257/aer.20131193) provided (and regularly updated) on the [web page of Sydney C. Ludvigson](https://www.sydneyludvigson.com/macro-and-financial-uncertainty-indexes). For the different macroeconomic variables, we rely on the popular FRED-QD dataset provided by the *Federal Reserve Bank of St. Louis* and publicly available [here](https://research.stlouisfed.org/econ/mccracken/fred-databases/). Our quarterly sample spans from 1965Q1 to 2019Q4. Sub-section 4.2 in the paper and Table B.1 in the Online Appendix shows the set of variables included for different model sizes. 
-
-
-**1.) [`A simple univariate example with a GP regression`](!univariate-GPreg.R):** In Sub-section 2.2, we illustrate the GP regression by means of a simple univariate example. We model US GDP growth as a function of the first lag of a macroeconomic uncertainty measure for a sub-sample around the global financial crisis. This stylized example, highlights the role of the kernel and its hyperparameters crucially impacts the posterior estimates of the conditional mean function. The corresponding estimation file replicates Figure 1 of the paper. 
 
 **2.) Conjugate GP-VAR with SV:** Based on the single realization of the Basu & Bundick (2017, ECTA) DSGE model [`BB_realization`](./data/BB_realization.csv), the file [`GPVAR_eqbyeq`](!GPVAR_eqbyeq.R) allows to estimate of a conjugate Gaussian process vector autoregression (GP-VAR) on an equation-by-equation basis. The [`GPVAR_girfs`](!GPVAR_girfs.R) collects the equation-wise estimates and allows to compute generalized impulse response functions (GIRFs). In addition, the folder [`gpvar funcs`](./gpvar_funcs/) contains the MCMC sampler for a GP regression and a C++ function to create a squared exponential kernel:
 

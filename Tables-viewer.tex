@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=1cm, left=1cm, right=1cm}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Collected Tables}
+
+% Include Tab. 1
+\input{OOS-res/Tab1_OOS-overview.tex}
+
+\newpage
+
+% Include Tab. 2
+\input{OOS-res/Tab-2_MCS_TR_010.tex}
+
+% Include Tab. B.1 (a) and (b) as separate tables
+\begin{landscape}
+\begin{tiny}
+\input{INSAMPLE-res/Tab-B1-a_SV-t.tex}
+\input{INSAMPLE-res/Tab-B1-b_SV-n.tex}
+\end{tiny}
+\end{landscape}
+
+
+% Include Tab. B.2
+\input{OOS-res/Tab-B2_MCS_Tmax_010}
+
+% Include Tab. B.3
+\input{OOS-res/Tab-B3_MCS_TR_025}
+
+% Include Tab. B.4
+\input{OOS-res/Tab-B4_MCS_Tmax_025}
+
+
+\end{document}

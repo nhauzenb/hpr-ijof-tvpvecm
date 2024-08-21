@@ -13,6 +13,9 @@ All model estimations were carried out on a computing cluster using parallel pro
 ### Estimation files to produce a single forecast:
 **!NOT DONE YET!** 
 
+For forecast evaluation, we used the *crps_sample()* function of the `scoringRules` package to compute continuous ranked probability scores (CRPSs), *MCSprocedure()* function of the `MCS` package for the model confidence sets (MCSs). 
+
+
 ### Replication codes:
 The replication code reproduces all figures and tables in the manuscript. 
 

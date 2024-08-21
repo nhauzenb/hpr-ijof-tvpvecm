@@ -11,10 +11,14 @@ In the empirical application, we focus on modeling European electricity prices. 
 All model estimations were carried out on a computing cluster using parallel processing. The cluster is equipped with 400 Intel E5-2650v3 2.3 GHz cores, managed through a Sun Grid Engine. We used R (version 4.1.3) as our main software. The libraries and packages used for estimation and analysis included `Rcpp`, `forecast`, `GIGrvg`, `MASS`, `Matrix`, `mvtnorm`, `stochvol`, `glasso`, `scoringRules`, and `MCS`. Additional packages used to create figures and tables were `data.table`, `dplyr`, `ggplot2`, `Hmisc`, `reshape2`, `tidyr`, `zoo`, and `scales`.
 
 ### Estimation files to produce a single forecast:
-**!NOT DONE YET!** 
+
+The files listed below allow for estimating the main specification and allow to produce a single forecast. A single run takes several hours on a desktop machine. 
+
+**1.) [`TVP-VECM-estim.R`](TVP-VECM-estim.R):** This R script estimates a time-varying vector error correction model (TVP-VECM) with stochastic volatility (SV). In addition, the Rcpp file [`kf.cpp`](kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++.
+
+**2.) [`TVP-VECM-postproces.R`](TVP-VECM-postproces.R):** Once the posterior quantities for the TVP-VECM are obtained, this R script allows for the generation of sparse estimates through post-processing and the computation of forecasts for both the non-sparsified and sparsified estimates.
 
 For forecast evaluation, we used the *crps_sample()* function of the `scoringRules` package to compute continuous ranked probability scores (CRPSs), *MCSprocedure()* function of the `MCS` package for the model confidence sets (MCSs). 
-
 
 ### Replication codes:
 The replication code reproduces all figures and tables in the manuscript. 

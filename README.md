@@ -14,11 +14,11 @@ All model estimations were carried out on a computing cluster using parallel pro
 **!NOT DONE YET!** 
 
 ### Replication codes:
-The replication codes reproduces all figures and tables in the manuscript. 
+The replication code reproduces all figures and tables in the manuscript. 
 
-#### Replication of results shown in Sub-Section 4.2: *"Nonlinearities and cointegration in European electricity prices"*
+#### Replication of results presented in Sub-Section 4.2: *"Nonlinearities and cointegration in European electricity prices"*
 
-In Sub-Section 4.2, we show and discuss:
+In Sub-Section 4.2, we show and discuss the following figures and tables:
 
 * **Figure 1.** The posterior probability of the rank (PPR) over time for the most flexible specification.
 * **Figure 2.** The posterior inclusion probability (PIP) over time for autoregressive coefficients (panel (a)) and covariance matrices (panel (b)) of the most flexible specification.
@@ -27,17 +27,16 @@ In Sub-Section 4.2, we show and discuss:
 
 The file [`Subsection4-2_insample`](Subsection4-2_insample.R) can be used to replicate Figure 1, panels (a) and (b) of Figure 2, panels (a) and (b) of Figure 3, as well as Table B.1 in the Appendix. To do so, the file loads the output data from the folder [`INSAMPLE-data`](./INSAMPLE-data) and stores the figures and tables in a folder labeled `INSAMPLE-res`.
 
+#### Replication of results presented in Sub-Section 4.3: *"Forecast results"*
 
-#### Replication of results shown in Sub-Section 4.3: *"Forecast results"*
+In Sub-Section 4.3, we show and discuss the following figures and tables:
 
-In Sub-Section 4.3, we show and discuss:
-
-* **Table 1.** Forecast performance for point and density forecasts
+* **Table 1.** Forecast performance for point and density forecasts.
 * **Table 2.** Model confidence set (MCS) for density forecasts at a 10 percent significance level using the *TR* test statistic.
 * **Table B.2.** Model confidence set (MCS) for density forecasts at a 10 percent significance level using the *T-max* test statistic.
 * **Table B.3.** Model confidence set (MCS) for density forecasts at a 25 percent significance level using the *TR* test statistic.
 * **Table B.4.** Model confidence set (MCS) for density forecasts at a 25 percent significance level using the *T-max* test statistic.
 
-The file [`Subsection4-3_OOS-main`](Subsection4-3_OOS-main.R) can be used to replicate the main Table — Table 1 — of the paper, while [`Subsection4-3_OOS-MCS`](Subsection4-3_OOS-MCS.R) replicates Tables 2, B.2, B.3, and B.4, which show results on the MCS. The .R-files access the output data in the folder [`OOS-data`](./OOS-data) and stores the tables in a folder labeled `OOS-res`.
+The file [`Subsection4-3_OOS-main`](Subsection4-3_OOS-main.R) can be used to replicate the main Table (Table 1) of the paper, while [`Subsection4-3_OOS-MCS`](Subsection4-3_OOS-MCS.R) replicates Tables 2, B.2, B.3, and B.4, which show results on the MCS. The .R-files access the output data in the folder [`OOS-data`](./OOS-data) and stores the tables in a folder labeled `OOS-res`.
 
-To make the final .tex tables more accessible, they can be collected as a pdf through the file [`Tables-viewer.tex`](Tables-viewer.tex).
+To make the generated .tex tables more accessible, they can be compiled into a pdf using the .tex-file [`Tables-viewer.tex`](Tables-viewer.tex).

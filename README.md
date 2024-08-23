@@ -12,7 +12,7 @@ All model estimations were carried out on a computing cluster using parallel pro
 
 ### Estimation file to produce a single forecast:
 
-The file [`TVP-VECM-forecast.R`](TVP-VECM_forecast.R) allows to produce a single forecast for the main specifications. Estimation will take about 1 to 2.5 minutes per 100 draws, depending on your computer. The first part of the code includes our Markov Chain Monte Carlo (MCMC) sampling algorithm, while the second part carries out ex-post sparsification based on the obtained MCMC draws. In addition, the Rcpp file [`kf.cpp`](./aux_funcs/kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++, and the file [`aux-file.R`](./aux_funcs/aux-file.R) provides a couple of auxiliary functions.
+The file [`TVP-VECM_forecast.R`](TVP-VECM_forecast.R) allows to produce a single forecast for the main specifications. Estimation will take about 1 to 2.5 minutes per 100 draws, depending on your computer. The first part of the code includes our Markov Chain Monte Carlo (MCMC) sampling algorithm, while the second part carries out ex-post sparsification based on the obtained MCMC draws. In addition, the Rcpp file [`kf.cpp`](./aux_funcs/kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++, and the file [`aux-file.R`](./aux_funcs/aux-file.R) provides a couple of auxiliary functions.
 
 For forecast evaluation, we used the *crps_sample()* function of the `scoringRules` package to compute continuous ranked probability scores (CRPSs), *MCSprocedure()* function of the `MCS` package for the model confidence sets (MCSs). 
 

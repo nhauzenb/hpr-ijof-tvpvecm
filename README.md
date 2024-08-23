@@ -14,9 +14,11 @@ All model estimations were carried out on a computing cluster using parallel pro
 
 The files listed below allow for estimating the main specification and allow to produce a single forecast. A single run takes several hours on a desktop machine. 
 
-**1.) [`TVP-VECM-estim.R`](TVP-VECM-estim.R):** This R script estimates a time-varying vector error correction model (TVP-VECM) with stochastic volatility (SV). In addition, the Rcpp file [`kf.cpp`](kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++.
+**1.) [`TVP-VECM-estim.R`](TVP-VECM-estim.R):** This R script estimates a time-varying vector error correction model (TVP-VECM) with stochastic volatility (SV). 
 
 **2.) [`TVP-VECM-postproces.R`](TVP-VECM-postproces.R):** Once the posterior quantities for the TVP-VECM are obtained, this R script allows for the generation of sparse estimates through post-processing and the computation of forecasts for both the non-sparsified and sparsified estimates.
+
+In addition, the Rcpp file [`kf.cpp`](./aux_funcs/kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++, and the file [`aux-file.R`](./aux_funcs/aux-file.R) provides a couple of auxiliary functions.
 
 For forecast evaluation, we used the *crps_sample()* function of the `scoringRules` package to compute continuous ranked probability scores (CRPSs), *MCSprocedure()* function of the `MCS` package for the model confidence sets (MCSs). 
 

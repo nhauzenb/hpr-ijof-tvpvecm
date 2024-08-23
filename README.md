@@ -10,7 +10,7 @@ In the empirical application, we focus on modeling European electricity prices. 
 ### Software information: 
 All model estimations were carried out on a computing cluster using parallel processing. The cluster is equipped with 400 Intel E5-2650v3 2.3 GHz cores, managed through a Sun Grid Engine. We used R (version 4.1.3) as our main software. The libraries and packages used for estimation and analysis included `Rcpp`, `MASS`, `Matrix`, `mvtnorm`, `stochvol`, `glasso`, `scoringRules`, and `MCS`. Additional packages used to create figures and tables were `data.table`, `dplyr`, `ggplot2`, `Hmisc`, `reshape2`, `tidyr`, `zoo`, and `scales`.
 
-### Estimation files to produce a single forecast:
+### Estimation file to produce a single forecast:
 
 The file [`TVP-VECM-forecast.R`](TVP-VECM-forecast.R) allows to produce a single forecast for the main specifications. Estimation will take about 1 to 2.5 minutes per 100 draws, depending on your computer. The first part of the code includes our Markov Chain Monte Carlo (MCMC) sampling algorithm, while the second part carries out ex-post sparsification based on the obtained MCMC draws. In addition, the Rcpp file [`kf.cpp`](./aux_funcs/kf.cpp) provides a computationally efficient implementation of the forward-filter backward-sampling (FFBS) algorithm in C++, and the file [`aux-file.R`](./aux_funcs/aux-file.R) provides a couple of auxiliary functions.
 

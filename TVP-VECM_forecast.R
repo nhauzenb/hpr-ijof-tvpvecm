@@ -60,7 +60,8 @@ Yraw.out <- window(Yraw, start = (end.in + 1/365), end = (end.in + 1/365), exten
 Yraw     <- window(Yraw, (end.in - (roll.window-1)/365),  end = end.in)
 
 # For estimation, we standardized the data 
-Yraw <- apply(Yraw, 2, function(x){(x-mean(x))/sd(x)})
+Yraw.mu <- apply(Yraw, 2, mean); Yraw.sd <- apply(Yraw, 2, sd) # Can be used to re-scale forecasts
+Yraw    <- apply(Yraw, 2, function(x){(x-mean(x))/sd(x)})
     
 Z <- mlag(Yraw,1) #y_t-1
 Y.lag <- mlag(Yraw,p+1) # lags in levels: y_t-1, ..., y_(t-p-1)

@@ -1,6 +1,6 @@
 ### Code package: N. Hauzenberger, M. Pfarrhofer, & L. Rossini (202x). Sparse time-varying parameter VECMs with an application to modeling electricity prices, *International Journal of Forecasting*, conditionally accepted.
 
-[**Publication (open access).**](https://www.dropbox.com/scl/fi/j4yh5t0xs3j62dpjhre2r/HPR_TVP-VECM.pdf?rlkey=b88yuazdmgsgkta8rjggz611m&dl=0)
+**Publication (open access).**
 
 [**Final working paper version.**](https://www.dropbox.com/scl/fi/j4yh5t0xs3j62dpjhre2r/HPR_TVP-VECM.pdf?rlkey=b88yuazdmgsgkta8rjggz611m&dl=0)
 
